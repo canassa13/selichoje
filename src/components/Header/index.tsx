@@ -6,13 +6,11 @@ export const Header = () => {
   return (
     <header className={styles.containerHeader}>
       <nav>
-        <li>
-          <Link href="/">
-            <a>
-              Home
-            </a>
-          </Link>
-        </li>
+        <Link href="/">
+          <a>
+            Home
+          </a>
+        </Link>
       </nav>
     </header>
   )
