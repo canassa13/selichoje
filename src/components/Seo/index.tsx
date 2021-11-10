@@ -1,9 +1,15 @@
+import { useRouter } from 'next/router'
+
 
 export const Seo = () => {
+  const router = useRouter();
+  console.log(router?.asPath);
+
+
   const title = 'Selic Hoje: Meta para a taxa Selic'
   const description = '​A Selic é a taxa básica de juros da economia. É o principal instrumento de política monetária utilizado pelo Banco Central (BC) para controlar a inflação.'
   const url = 'https://selichoje.com/'
-  const image = 'selichoje.webp'
+  const image = url + 'images/selichoje.webp'
 
   return (
     <>
