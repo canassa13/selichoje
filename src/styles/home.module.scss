@@ -26,7 +26,6 @@
   background-color: var(--white);
   transition: box-shadow 0.25s;
   border-radius: 2px;
-
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
     0 1px 5px 0 rgb(0 0 0 / 20%);
 
@@ -35,5 +34,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.homeChart {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 550px;
+
+  h3 {
+    text-align: center;
   }
 }

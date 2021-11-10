@@ -9,6 +9,7 @@ interface ChartProps {
 
 export const Chart = ({ labels, values }: ChartProps) => {
   const ctx = 'myChart';
+  const [myChart, setMyChart] = useState<ChartJs<"line", "string"[], "string">>()
 
   const data = useMemo(() => ({
     labels,
@@ -24,22 +25,27 @@ export const Chart = ({ labels, values }: ChartProps) => {
   }), [labels, values])
 
   useEffect(() => {
-    new ChartJs(ctx, {
-      type: 'line',
-      data: data,
-      options: {
-        responsive: false,
-        interaction: {
-          intersect: false,
-          axis: 'x'
-        },
-        plugins: {
-          title: {
-            display: true,
-            text: 'Meta para a taxa Selic',
+    setMyChart(prevState => {
+      if (prevState) {
+        prevState?.destroy()
+      }
+      return new ChartJs(ctx, {
+        type: 'line',
+        data: data,
+        options: {
+          responsive: false,
+          interaction: {
+            intersect: false,
+            axis: 'x'
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: 'Meta para a taxa Selic',
+            }
           }
         }
-      }
+      })
     })
   }, [data])
 
