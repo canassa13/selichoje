@@ -6,10 +6,9 @@
 
 :root {
   --white: #ffffff;
-  --blue-100: #2c83ff;
 
-  --gray-300: #d5d5e0;
-  --gray-900: #888888;
+  --gray-100: #e1dedeb3;
+  --gray-300: #585858;
 }
 
 @media (max-width: 1080px) {
@@ -25,9 +24,20 @@
 }
 
 body {
-  background: var(--white);
+  background: var(--gray-100);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong {
+  color: var(--gray-300);
 }
 
 body,
