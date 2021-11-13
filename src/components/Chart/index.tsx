@@ -1,6 +1,8 @@
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useRef } from "react";
 
 import ChartJs from 'chart.js/auto';
+
+import styles from './styles.module.scss'
 
 interface ChartProps {
   values: 'string'[],
@@ -9,7 +11,7 @@ interface ChartProps {
 
 export const Chart = ({ labels, values }: ChartProps) => {
   const ctx = 'myChart';
-  const [myChart, setMyChart] = useState<ChartJs<"line", "string"[], "string">>()
+  const myChartRef = useRef<ChartJs<"line", "string"[], "string">>()
 
   const data = useMemo(() => ({
     labels,
@@ -25,29 +27,27 @@ export const Chart = ({ labels, values }: ChartProps) => {
   }), [labels, values])
 
   useEffect(() => {
-    setMyChart(prevState => {
-      if (prevState) {
-        prevState?.destroy()
-      }
-      return new ChartJs(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-          responsive: false,
-          interaction: {
-            intersect: false,
-            axis: 'x'
-          },
-          plugins: {
-            title: {
-              display: true,
-              text: 'Meta para a taxa Selic',
-            }
+    if (myChartRef.current) {
+      myChartRef.current?.destroy()
+    }
+    myChartRef.current = new ChartJs(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: false,
+        maintainAspectRatio: false,
+        interaction: {
+          intersect: false,
+          axis: 'x'
+        },
+        plugins: {
+          title: {
+            display: true,
           }
         }
-      })
+      }
     })
   }, [data])
 
-  return <canvas id="myChart" width="500" height="500" />
+  return <canvas id="myChart" height='300' width='300' />
 }

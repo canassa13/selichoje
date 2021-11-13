@@ -7,12 +7,12 @@
 :root {
   --white: #ffffff;
 
-  --gray-100: #e1dedeb3;
-  --gray-300: #585858;
+  --gray-100: #f7f7f7;
 
-  --blue-300: #0975ff;
+  --black-400: #0000008a;
+  --black-500: #000000de;
 
-  --purple-300: #4a4acf
+  --blue-300: #4285f4;
 }
 
 @media (max-width: 1080px) {
@@ -39,9 +39,13 @@ h3,
 h4,
 h5,
 h6,
-p,
 strong {
-  color: var(--gray-300);
+  color: var(--black-500);
+}
+
+p,
+li {
+  color: var(--black-400);
 }
 
 body,
@@ -56,7 +60,8 @@ button {
   cursor: pointer;
 }
 
-a {
-  color: var(--blue-300);
+.card {
+  border-radius: 2px;
+  background-color: var(--white);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 12%);
 }
-

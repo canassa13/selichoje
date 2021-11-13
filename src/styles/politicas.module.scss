@@ -1,0 +1,22 @@
+.politicasContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1280px;
+  text-align: justify;
+
+  ul {
+    margin-left: 1rem;
+
+    li {
+      padding-bottom: 1rem;
+    }
+  }
+
+  h2,
+  h3,
+  p {
+    padding-bottom: 1rem;
+  }
+}
