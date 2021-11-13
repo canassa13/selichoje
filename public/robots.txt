@@ -1,1 +1,3 @@
+Sitemap: https://www.selichoje.com/sitemap.xml
+
 User-Agent: *
