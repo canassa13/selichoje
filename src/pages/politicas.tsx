@@ -1,13 +1,8 @@
-import Head from 'next/head'
-
 import styles from '../styles/politicas.module.scss';
 
 const Politicas = () => {
   return (
     <>
-      <Head>
-        <title>Selic Hoje: Meta para a taxa Selic</title>
-      </Head>
       <section className={styles.politicasContainer}>
         <h2>Política de Privacidade</h2>
         <p>A sua privacidade é importante para nós. É política do Selic Hoje respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site

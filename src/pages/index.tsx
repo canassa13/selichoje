@@ -1,5 +1,4 @@
 import type { NextPage, GetStaticProps } from 'next'
-import Head from 'next/head'
 
 import dayjs from 'dayjs'
 
@@ -23,9 +22,6 @@ const Home: NextPage<HomeProps> = ({ selicSerie, values, labels }) => {
 
   return (
     <>
-      <Head>
-        <title>Selic Hoje: Meta para a taxa Selic</title>
-      </Head>
       <section className={styles.homeContainer}>
         <div className={`${styles.homeCard} card`}>
           <div>
