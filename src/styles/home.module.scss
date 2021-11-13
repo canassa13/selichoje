@@ -31,7 +31,7 @@
 
 .homeInfo {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 400px));
   gap: 1rem;
   justify-content: center;
   margin: 0 auto 2rem auto;
