@@ -1,7 +1,63 @@
 .homeContainer {
-  padding: 1rem;
   display: flex;
+  flex-direction: column;
+  padding: 2rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 1.4rem;
+      padding-right: 1rem;
+    }
+  }
+
+  strong {
+    font-size: 2rem;
+  }
+}
+
+.homeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.homeInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  max-width: 1280px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    h3 {
+      text-align: center;
+      & + p {
+        padding-top: 1rem;
+      }
+    }
+
+    p {
+      text-align: justify;
+      text-indent: 1rem;
+      line-height: 1.5rem;
+    }
+  }
 }
