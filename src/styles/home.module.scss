@@ -31,18 +31,15 @@
 
 .homeInfo {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 1rem;
   justify-content: center;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto;
   max-width: 1280px;
+  padding: 2rem;
 
   table {
     padding-top: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 0;
   }
 
   div {
