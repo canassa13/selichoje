@@ -1,13 +1,8 @@
-import Head from 'next/head'
-
 import styles from '../styles/termos.module.scss';
 
 const Termos = () => {
   return (
     <>
-      <Head>
-        <title>Selic Hoje: Meta para a taxa Selic</title>
-      </Head>
       <section className={styles.termosContainer}>
         <h2>1. Termos</h2>
         <p>
