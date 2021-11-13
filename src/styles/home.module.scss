@@ -37,6 +37,10 @@
   margin: 0 auto 2rem auto;
   max-width: 1280px;
 
+  table {
+    padding-top: 1rem;
+  }
+
   @media (max-width: 768px) {
     padding: 0;
   }
