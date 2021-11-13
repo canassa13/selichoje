@@ -4,7 +4,7 @@ import Head from 'next/head'
 import dayjs from 'dayjs'
 
 import { api } from '../services/bcdata'
-import { Tooltip, Chart, Table, Footer } from '../components'
+import { Tooltip, Chart, Table } from '../components'
 
 import styles from '../styles/home.module.scss'
 
@@ -37,7 +37,7 @@ const Home: NextPage<HomeProps> = ({ selicSerie, values, labels }) => {
       </section>
       <section className={styles.homeInfo}>
         <div className='card'>
-          <h3>Taxa Selic nos últimos 90 dias</h3>
+          <h3>Taxa Selic nos últimos 60 dias</h3>
           <Chart labels={labels} values={values} />
         </div>
         <div className="card">
@@ -102,7 +102,7 @@ const Home: NextPage<HomeProps> = ({ selicSerie, values, labels }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const finalDate = dayjs(new Date()).set('hours', 0)
-  const inicialDate = finalDate.subtract(90, 'day')
+  const inicialDate = finalDate.subtract(60, 'day')
 
   const { data: selicSerie } = await api.get(
     `bcdata.sgs.432/dados?formato=json&dataInicial=${inicialDate.format(
