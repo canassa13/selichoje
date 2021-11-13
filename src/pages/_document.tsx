@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
-import { Seo } from '../components/Seo'
+import { Seo } from '../components'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

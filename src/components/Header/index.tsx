@@ -11,11 +11,6 @@ export const Header = () => {
             Home
           </a>
         </Link>
-        <Link href="/politicas">
-          <a>
-            Política de Privacidade
-          </a>
-        </Link>
       </nav>
     </header>
   )
