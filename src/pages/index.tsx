@@ -39,7 +39,7 @@ const Home: NextPage<HomeProps> = ({ selicSerie, values, labels }) => {
       </section>
       <section className={styles.homeInfo}>
         <div className='card'>
-          <h3>Taxa Selic no últimos 30 dias</h3>
+          <h3>Taxa Selic nos últimos 30 dias</h3>
           <Chart labels={labels} values={values} />
         </div>
         <div className="card">
@@ -93,6 +93,7 @@ const Home: NextPage<HomeProps> = ({ selicSerie, values, labels }) => {
           </p>
         </div>
         <div className="card">
+          <h3>Taxa Selic nos últimos dias</h3>
           <Table dataset={selicSerie} />
         </div>
       </section>
