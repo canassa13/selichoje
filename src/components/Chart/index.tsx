@@ -1,53 +1,53 @@
 import { useMemo, useEffect, useRef } from "react";
 
-import ChartJs from 'chart.js/auto';
+import ChartJs from "chart.js/auto";
 
-import styles from './styles.module.scss'
+import type { HomeProps } from "../../pages";
 
-interface ChartProps {
-  values: 'string'[],
-  labels: 'string'[]
-}
+type ChartProps = Omit<HomeProps, "formattedSelicSerie">;
 
 export const Chart = ({ labels, values }: ChartProps) => {
-  const ctx = 'myChart';
-  const myChartRef = useRef<ChartJs<"line", "string"[], "string">>()
+  const ctx = "myChart";
+  const myChartRef = useRef<ChartJs<"line", string[], string>>();
 
-  const data = useMemo(() => ({
-    labels,
-    datasets: [
-      {
-        label: '% a.a., dados diários',
-        data: values,
-        borderColor: 'black',
-        fill: false,
-        stepped: true,
-      }
-    ]
-  }), [labels, values])
+  const data = useMemo(
+    () => ({
+      labels,
+      datasets: [
+        {
+          label: "% a.a., dados diários",
+          data: values,
+          borderColor: "black",
+          fill: false,
+          stepped: true,
+        },
+      ],
+    }),
+    [labels, values]
+  );
 
   useEffect(() => {
     if (myChartRef.current) {
-      myChartRef.current?.destroy()
+      myChartRef.current?.destroy();
     }
     myChartRef.current = new ChartJs(ctx, {
-      type: 'line',
+      type: "line",
       data: data,
       options: {
         responsive: false,
         maintainAspectRatio: false,
         interaction: {
           intersect: false,
-          axis: 'x'
+          axis: "x",
         },
         plugins: {
           title: {
             display: true,
-          }
-        }
-      }
-    })
-  }, [data])
+          },
+        },
+      },
+    });
+  }, [data]);
 
-  return <canvas id="myChart" height='300' width='300' />
-}
+  return <canvas id="myChart" height="300" width="300" />;
+};
