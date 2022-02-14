@@ -1,13 +1,8 @@
-import Head from 'next/head'
-
 import styles from '../styles/termos.module.scss';
 
 const Termos = () => {
   return (
     <>
-      <Head>
-        <title>Selic Hoje: Meta para a taxa Selic</title>
-      </Head>
       <section className={styles.termosContainer}>
         <h2>1. Termos</h2>
         <p>
@@ -32,7 +27,7 @@ const Termos = () => {
           <li>tentar descompilar ou fazer engenharia reversa de qualquer
             software contido no site Selic Hoje;  </li>
           <li>remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou</li>
-          <li>transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</li>
+          <li>transferir os materiais para outra pessoa ou espelhe os materiais em qualquer outro servidor.</li>
         </ol>
         <p>
           Esta licença será automaticamente rescindida se você violar
@@ -44,7 +39,7 @@ const Termos = () => {
         <h2>3. Isenção de responsabilidade</h2>
         <ol>
           <li>
-            Os materiais no site da Selic Hoje são fornecidos 'como estão'. Selic Hoje não oferece garantias,
+            Os materiais no site da Selic Hoje são fornecidos como estão. Selic Hoje não oferece garantias,
             expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo,
             sem limitação, garantias implícitas ou condições de comercialização,
             adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.
