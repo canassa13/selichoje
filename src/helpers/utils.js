@@ -1,16 +1,16 @@
 import { valueOrDefault } from "../../dist/helpers.esm";
 
 export function numbers(config) {
-  var cfg = config || {};
-  var min = valueOrDefault(cfg.min, 0);
-  var max = valueOrDefault(cfg.max, 100);
-  var from = valueOrDefault(cfg.from, []);
-  var count = valueOrDefault(cfg.count, 8);
-  var decimals = valueOrDefault(cfg.decimals, 8);
-  var continuity = valueOrDefault(cfg.continuity, 1);
-  var dfactor = Math.pow(10, decimals) || 0;
-  var data = [];
-  var i, value;
+  let cfg = config || {};
+  let min = valueOrDefault(cfg.min, 0);
+  let max = valueOrDefault(cfg.max, 100);
+  let from = valueOrDefault(cfg.from, []);
+  let count = valueOrDefault(cfg.count, 8);
+  let decimals = valueOrDefault(cfg.decimals, 8);
+  let continuity = valueOrDefault(cfg.continuity, 1);
+  let dfactor = Math.pow(10, decimals) || 0;
+  let data = [];
+  let i, value;
 
   for (i = 0; i < count; ++i) {
     value = (from[i] || 0) + this.rand(min, max);

@@ -1,13 +1,10 @@
-import styles from './styles.module.scss'
+import type { HomeProps } from "../../pages";
 
-interface TableProps {
-  dataset: {
-    data: 'string',
-    valor: 'string'
-  }[]
-}
+import styles from "./styles.module.scss";
 
-export const Table = ({ dataset }: TableProps) => {
+type TableProps = Pick<HomeProps, "formattedSelicSerie">;
+
+export const Table = ({ formattedSelicSerie }: TableProps) => {
   return (
     <table className={styles.containerTable}>
       <thead>
@@ -17,7 +14,7 @@ export const Table = ({ dataset }: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {dataset?.map(d => (
+        {formattedSelicSerie?.map((d) => (
           <tr key={d?.data}>
             <td>{d?.valor}</td>
             <td>{d?.data}</td>
@@ -25,5 +22,5 @@ export const Table = ({ dataset }: TableProps) => {
         ))}
       </tbody>
     </table>
-  )
-}
+  );
+};
